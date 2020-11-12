@@ -1,0 +1,8 @@
+FROM amazonlinux
+
+RUN sudo yum update -y
+RUN sudo yum install python3-pip.noarch -y
+RUN sudo pip3 install aws-xray-sdk -y
+RUN wget https://raw.githubusercontent.com/mgsilva97/python-hello-world/master/hello-world.py && sudo chmod +x hello-world.py
+
+CMD hello-world.py
